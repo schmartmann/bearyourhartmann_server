@@ -11,10 +11,6 @@ var port = process.env.PORT || 3000;
 
 const pass = process.env.GMAIL;
 
-// let encodePass = base64url.encode(pass);
-
-console.log(pass)
-
 const transporter = nodemailer.createTransport("smtps://bearyourhartmann%40gmail.com:"+pass+"@smtp.gmail.com")
 
 const mailOptions = {
@@ -50,5 +46,5 @@ app.post("/formupload", function(req, res){
     }
     console.log('Message sent: ' + info.response);
   });
-  res.send("message sent")
+  res.redirect('http://localhost:9292/message')
 })
