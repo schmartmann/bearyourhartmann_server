@@ -1,17 +1,24 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const request = require('request');
 const nodemailer = require('nodemailer');
+const base64url = require('base64-url');
 
 app.use("/", express.static(__dirname + '/build'));
 var port = process.env.PORT || 3000;
 
-const transporter = nodemailer.createTransport('smtps://bearyourhartmann%40gmail.com:nicenicenicenice@smtp.gmail.com')
+const pass = process.env.GMAIL;
+
+// let encodePass = base64url.encode(pass);
+
+console.log(pass)
+
+const transporter = nodemailer.createTransport("smtps://bearyourhartmann%40gmail.com:"+pass+"@smtp.gmail.com")
 
 const mailOptions = {
   from: '"Your Loyal Server" <front@bearyourhartmann.com>',
-  // to: 'bearyourhartmann@gmail.com, stefanhartmann@gmail.com, thejessbear@gmail.com',
   to: 'bearyourhartmann@gmail.com',
   subject: 'Bus Form Update',
   text: "Hello world",
