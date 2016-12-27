@@ -47,5 +47,9 @@ app.post("/formupload", function(req, res){
     }
     console.log('Message sent: ' + info.response);
   });
-  res.redirect('http://localhost:9292/message')
+  res.redirect('http://www.bearyourhartmann.com/message.html')
+})
+
+app.get('/formupload', function(req, res){
+  res.send('at least this route is working, eh?')
 })
