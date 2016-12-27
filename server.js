@@ -50,6 +50,6 @@ app.post("/formupload", function(req, res){
   res.redirect('http://www.bearyourhartmann.com/message.html')
 })
 
-app.get('/formupload', function(req, res){
+app.get('/', function(req, res){
   res.send('at least this route is working, eh?')
 })
