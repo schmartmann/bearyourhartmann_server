@@ -51,5 +51,6 @@ app.post("/formupload", function(req, res){
 })
 
 app.get('/', function(req, res){
+  console.log("this is the request:", req.body)
   res.send('at least this route is working, eh?')
 })
