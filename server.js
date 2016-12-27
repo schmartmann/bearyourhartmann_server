@@ -8,7 +8,7 @@ const base64url = require('base64-url');
 
 app.use("/", express.static(__dirname + '/build'));
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8282;
 
 const pass = process.env.GMAIL;
 
