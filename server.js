@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const base64url = require('base64-url');
 
 app.use("/", express.static(__dirname + '/build'));
+
 var port = process.env.PORT || 3000;
 
 const pass = process.env.GMAIL;
